@@ -65,6 +65,7 @@ export type StackKey =
   | 'misc'
   | 'automations'
   | 'scripts'
+  | 'input_buttons'
   | 'room_pins';
 
 export const DEFAULT_STACKS_ORDER: StackKey[] = [
@@ -84,6 +85,7 @@ export const DEFAULT_STACKS_ORDER: StackKey[] = [
   'misc',
   'automations',
   'scripts',
+  'input_buttons',
   'room_pins',
 ];
 
@@ -204,6 +206,7 @@ export interface Simon42StrategyConfig {
   show_switches_section_in_rooms?: boolean; // default: false (switches & plugs stay under Misc; opt-in combined section, #376)
   show_automations_in_rooms?: boolean; // default: false
   show_scripts_in_rooms?: boolean; // default: false
+  show_input_buttons_in_rooms?: boolean; // default: false (input_button.* tiles with a press tap-action)
   show_ups_in_rooms?: boolean; // default: false (opt-in, #310 section convention)
   show_energy_in_rooms?: boolean; // default: false (opt-in — power/energy/water/gas sensors as own room block)
   show_cameras_in_rooms?: boolean; // default: true
@@ -517,6 +520,8 @@ export interface RoomEntities {
   locks: string[];
   automations: string[];
   scripts: string[];
+  /** input_button domain — momentary press buttons (opt-in room section) */
+  input_buttons: string[];
   cameras: string[];
   ups: string[];
   energy: string[];

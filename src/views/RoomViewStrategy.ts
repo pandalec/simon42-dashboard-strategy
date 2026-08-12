@@ -251,6 +251,7 @@ class Simon42ViewRoomStrategy extends HTMLElement {
       locks: [],
       automations: [],
       scripts: [],
+      input_buttons: [],
       cameras: [],
       ups: [],
       energy: [],
@@ -363,6 +364,10 @@ class Simon42ViewRoomStrategy extends HTMLElement {
       }
       if (domain === 'script' && dashboardConfig.show_scripts_in_rooms) {
         roomEntities.scripts.push(entityId);
+        continue;
+      }
+      if (domain === 'input_button' && dashboardConfig.show_input_buttons_in_rooms) {
+        roomEntities.input_buttons.push(entityId);
         continue;
       }
       if (domain === 'camera' && dashboardConfig.show_cameras_in_rooms !== false) {
@@ -997,6 +1002,19 @@ class Simon42ViewRoomStrategy extends HTMLElement {
       entity: e,
       name: stripAreaName(e, area, hass),
       vertical: false,
+    }));
+
+    // input_button — momentary buttons. The default tile tap-action would
+    // open more-info, which is useless for a press-only entity; wire the
+    // press service directly so the tile acts as the button.
+    domainSection('input_buttons', roomEntities.input_buttons, localize('room.input_buttons'), 'mdi:button-pointer', (e) => ({
+      type: 'tile',
+      entity: e,
+      name: stripAreaName(e, area, hass),
+      vertical: false,
+      icon: 'mdi:button-pointer',
+      tap_action: { action: 'perform-action', perform_action: 'input_button.press', target: { entity_id: e } },
+      state_content: 'last_changed',
     }));
 
     const roomPins = getAreasRoomPins(dashboardConfig, area);

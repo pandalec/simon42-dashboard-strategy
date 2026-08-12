@@ -21,6 +21,7 @@ describe('mergeStacksOrder', () => {
       'misc',
       'automations',
       'scripts',
+      'input_buttons',
       'room_pins',
     ]);
   });
@@ -44,6 +45,7 @@ describe('mergeStacksOrder', () => {
       'misc',
       'automations',
       'scripts',
+      'input_buttons',
     ]);
   });
 
@@ -65,6 +67,7 @@ describe('mergeStacksOrder', () => {
       'switches',
       'automations',
       'scripts',
+      'input_buttons',
       'room_pins',
     ]);
   });

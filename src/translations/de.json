@@ -46,6 +46,7 @@
     "misc": "Sonstiges",
     "automations": "Automationen",
     "scripts": "Skripte",
+    "input_buttons": "Tasten",
     "room_pins": "Raum-Pins"
   },
   "summary": {
@@ -187,6 +188,7 @@
     "misc": "Sonstiges",
     "automations": "Automationen",
     "scripts": "Skripte",
+    "input_buttons": "Tasten",
     "room_pins": "Raum-Pins"
   },
   "editor": {
@@ -363,6 +365,8 @@
     "show_automations_in_rooms_desc": "Zeigt dem Bereich zugeordnete Automationen in den jeweiligen Raum-Ansichten an.",
     "show_scripts_in_rooms": "Skripte in Raum-Ansichten anzeigen",
     "show_scripts_in_rooms_desc": "Zeigt dem Bereich zugeordnete Skripte in den jeweiligen Raum-Ansichten an.",
+    "show_input_buttons_in_rooms": "Input-Buttons in Raum-Ansichten anzeigen",
+    "show_input_buttons_in_rooms_desc": "Zeigt dem Bereich zugeordnete input_button-Entitäten in den jeweiligen Raum-Ansichten an. Jede Kachel löst beim Antippen den Tastendruck (press) aus.",
     "show_ups_in_rooms": "USV-Block in Raum-Ansichten anzeigen",
     "show_ups_in_rooms_desc": "Zeigt pro erkannter USV einen eigenen Block mit Akku-Ladestand und zugehörigen Sensoren in der Raum-Ansicht. Erkannt werden dedizierte USV-Integrationen (NUT, apcupsd) sowie Geräte, deren Name „USV“ oder „UPS“ enthält.",
     "show_cameras_in_rooms": "Kameras in Raum-Ansichten anzeigen",
@@ -455,6 +459,7 @@
     "domain_vacuum": "Saug- & Mähroboter",
     "domain_fan": "Ventilatoren",
     "domain_switches": "Schalter",
+    "domain_input_buttons": "Input-Buttons",
     "domain_locks": "Schlösser",
     "domain_cameras": "Kameras",
     "domain_cameras_disabled_hint": "Global deaktiviert — aktiviere zuerst „Kameras in Raum-Ansichten anzeigen“.",

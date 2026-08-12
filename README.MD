@@ -591,6 +591,7 @@ Die Spalte **Seit** gibt an, ab welcher Version die Option verfügbar ist. „�
 | `show_switches_section_in_rooms` | boolean | `false` | v1.4.0 | Schalter & smarte Steckdosen als eigener Abschnitt „Schalter & Steckdosen“ statt unter „Sonstiges“ |
 | `show_automations_in_rooms` | boolean | `false` | — | Automationen in Raum-Views |
 | `show_scripts_in_rooms` | boolean | `false` | — | Skripte in Raum-Views |
+| `show_input_buttons_in_rooms` | boolean | `false` | v1.4.0 | `input_button`-Entitäten in Raum-Views (Kachel löst beim Antippen `press` aus) |
 | `show_cameras_in_rooms` | boolean | `true` | v1.4.0 | Kamera-Streams in Raum-Views |
 | `camera_live_toggle` | boolean | `false` | v1.4.0 | Raum-Kameras als Standbild mit Play/Stopp-Button statt automatischer Vorschau |
 | `show_window_contacts_in_rooms` | boolean | `true` | v1.3.5 | Fensterkontakte als Badges in Raum-Views |

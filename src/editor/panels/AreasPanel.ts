@@ -58,6 +58,7 @@ export function renderAreasSection(host: StrategyEditorHost): TemplateResult {
   const showSwitchesSectionInRooms = host._config.show_switches_section_in_rooms === true;
   const showAutomationsInRooms = host._config.show_automations_in_rooms === true;
   const showScriptsInRooms = host._config.show_scripts_in_rooms === true;
+  const showInputButtonsInRooms = host._config.show_input_buttons_in_rooms === true;
   const showUpsInRooms = host._config.show_ups_in_rooms === true;
   const showEnergyInRooms = host._config.show_energy_in_rooms === true;
   // Window / door contact badges default to visible — read as opt-out (!== false).
@@ -121,6 +122,10 @@ export function renderAreasSection(host: StrategyEditorHost): TemplateResult {
       ${host._renderCheckbox('show-scripts-in-rooms', localize('editor.show_scripts_in_rooms'), showScriptsInRooms,
         (checked) => host._toggleChanged('show_scripts_in_rooms', checked, false))}
       <div class="description">${localize('editor.show_scripts_in_rooms_desc')}</div>
+
+      ${host._renderCheckbox('show-input-buttons-in-rooms', localize('editor.show_input_buttons_in_rooms'), showInputButtonsInRooms,
+        (checked) => host._toggleChanged('show_input_buttons_in_rooms', checked, false))}
+      <div class="description">${localize('editor.show_input_buttons_in_rooms_desc')}</div>
 
       ${host._renderCheckbox('show-ups-in-rooms', localize('editor.show_ups_in_rooms'), showUpsInRooms,
         (checked) => host._toggleChanged('show_ups_in_rooms', checked, false))}
@@ -368,6 +373,7 @@ function renderAreaEntities(host: StrategyEditorHost,
     { key: 'vacuum', label: localize('editor.domain_vacuum'), icon: 'mdi:robot-vacuum' },
     { key: 'fan', label: localize('editor.domain_fan'), icon: 'mdi:fan' },
     { key: 'switches', label: localize('editor.domain_switches'), icon: 'mdi:light-switch' },
+    { key: 'input_buttons', label: localize('editor.domain_input_buttons'), icon: 'mdi:button-pointer' },
     { key: 'locks', label: localize('editor.domain_locks'), icon: 'mdi:lock' },
     { key: 'cameras', label: localize('editor.domain_cameras'), icon: 'mdi:cctv' },
     { key: 'ups', label: localize('editor.domain_ups'), icon: 'mdi:power-plug-battery' },
@@ -1246,6 +1252,7 @@ async function getAreaGroupedEntities(areaId: string, hass: HomeAssistant): Prom
     locks: [],
     automations: [],
     scripts: [],
+    input_buttons: [],
     cameras: [],
     ups: [],
     energy: [],
@@ -1324,6 +1331,8 @@ async function getAreaGroupedEntities(areaId: string, hass: HomeAssistant): Prom
       roomEntities.automations.push(entity.entity_id);
     } else if (domain === 'script') {
       roomEntities.scripts.push(entity.entity_id);
+    } else if (domain === 'input_button') {
+      roomEntities.input_buttons.push(entity.entity_id);
     } else if (domain === 'camera') {
       roomEntities.cameras.push(entity.entity_id);
     } else if (domain === 'sensor' && ['power', 'energy', 'water', 'gas'].includes(deviceClass || '')) {

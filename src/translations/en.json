@@ -46,6 +46,7 @@
     "misc": "Miscellaneous",
     "automations": "Automations",
     "scripts": "Scripts",
+    "input_buttons": "Buttons",
     "room_pins": "Room Pins"
   },
   "summary": {
@@ -187,6 +188,7 @@
     "misc": "Miscellaneous",
     "automations": "Automations",
     "scripts": "Scripts",
+    "input_buttons": "Buttons",
     "room_pins": "Room Pins"
   },
   "editor": {
@@ -363,6 +365,8 @@
     "show_automations_in_rooms_desc": "Shows automations assigned to the area in the respective room views.",
     "show_scripts_in_rooms": "Show scripts in room views",
     "show_scripts_in_rooms_desc": "Shows scripts assigned to the area in the respective room views.",
+    "show_input_buttons_in_rooms": "Show input buttons in room views",
+    "show_input_buttons_in_rooms_desc": "Shows input_button entities assigned to the area in the respective room views. Each tile triggers the button (press) on tap.",
     "show_ups_in_rooms": "Show UPS block in room views",
     "show_ups_in_rooms_desc": "Shows one block per detected UPS with battery level and related sensors in the room view. Detection covers dedicated UPS integrations (NUT, apcupsd) and devices whose name contains “UPS”.",
     "show_cameras_in_rooms": "Show cameras in room views",
@@ -455,6 +459,7 @@
     "domain_vacuum": "Vacuums & Mowers",
     "domain_fan": "Fans",
     "domain_switches": "Switches",
+    "domain_input_buttons": "Input Buttons",
     "domain_locks": "Locks",
     "domain_cameras": "Cameras",
     "domain_cameras_disabled_hint": "Disabled globally — enable “Show cameras in room views” first.",

@@ -66,6 +66,7 @@ const STACK_META = new Map<StackKey, { icon: string; labelKey: string }>([
   ['misc', { icon: 'mdi:dots-horizontal', labelKey: 'stacks.misc' }],
   ['automations', { icon: 'mdi:robot', labelKey: 'stacks.automations' }],
   ['scripts', { icon: 'mdi:script-text', labelKey: 'stacks.scripts' }],
+  ['input_buttons', { icon: 'mdi:button-pointer', labelKey: 'stacks.input_buttons' }],
   ['room_pins', { icon: 'mdi:pin', labelKey: 'stacks.room_pins' }],
 ]);
 
@@ -93,6 +94,7 @@ function presentStackKeys(host: StrategyEditorHost,
   if (has('vacuum') || has('switches') || has('humidifier') || has('valve') || has('water_heater')) present.add('misc');
   if (has('automations')) present.add('automations');
   if (has('scripts')) present.add('scripts');
+  if (has('input_buttons') && host._config.show_input_buttons_in_rooms === true) present.add('input_buttons');
 
   present.add('cameras');
   present.add('room_pins');
